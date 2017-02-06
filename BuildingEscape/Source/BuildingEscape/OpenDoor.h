@@ -17,6 +17,8 @@ public:
 
 	void OpenDoor();
 
+	void CloseDoor();
+
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
@@ -30,5 +32,12 @@ private:
 	UPROPERTY(EditAnywhere)
 		ATriggerVolume* PressurePlate;
 
+	UPROPERTY(EditAnywhere)
+		float CloseDoorDelay = 1.f;
+
+		float LastDoorOpenTime;
+
 	AActor* ActorThatOpens;
+
+	AActor* Owner;
 };
